@@ -1,0 +1,17 @@
+<div class="row review">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8">
+
+        <span ng-bind-html="review.authorName" class="review-user-name"></span>
+        <span ng-bind-html="review.createdAt  | date:'dd MMMM yyyy'" class="review-date"></span>
+      </div>
+      <div class="col-md-4">
+        <ratings review-score="{{review.rating}}" class="pull-right-md" ng-if="review.rating > 0"></ratings>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 review-content">
+    <span ng-bind-html="review.reviewText"></span>
+  </div>
+</div>

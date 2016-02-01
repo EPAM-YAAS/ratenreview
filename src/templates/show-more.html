@@ -1,0 +1,9 @@
+<div class="show-more-wrapper">
+  <a class="btn btn-link show-more-text" ng-click="onMoreClick()"
+  ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+  <span class="btn btn-circle btn-xl" ng-class="{'cirle-hover':hover, 'cirle-raw':!hover}">
+    <i class="glyphicon glyphicon-repeat" ng-class="{'circle-spin':spinning}"/>
+  </span>
+  <span ng-bind-html="'SHOW MORE'"  />
+</a>
+</div>

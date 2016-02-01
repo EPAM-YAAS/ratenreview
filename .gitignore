@@ -1,0 +1,6 @@
+.idea
+.iml
+.eml
+
+node_modules
+bower_components

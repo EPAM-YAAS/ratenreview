@@ -1,0 +1,22 @@
+{
+	"author": "EPAM",
+	"name": "rate-n-review",
+	"version": "1.0.0",
+	"description": "EPAM Yaas Rate and review service ui components",
+	"homepage": "",
+	"dependencies": {
+	},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-concat": "~0.3.0",
+		"grunt-contrib-less": "~0.8.1",
+		"grunt-contrib-uglify": "~0.2.5",
+		"grunt-contrib-cssmin": "~0.7.0",
+		"grunt-contrib-jshint": "~0.7.0",
+		"grunt-angular-templates": "~1.0.2"
+	},
+	"repository": "",
+	"engines":{
+		"node":"0.10.10"
+	}
+}

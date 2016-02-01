@@ -1,0 +1,53 @@
+<div class="review-form">
+    <div class="review-form-header">
+        <h3>Product review </h3>
+    </div>
+    <div class="review-form-body">
+        <div class="description" ng-if="showThanksForReview">
+            <p class="messages-block">Thanks! Your comment was added and will be published after review</p>
+        </div>
+        <div class="description" ng-if="showAlreadyAddedReview">
+           <p class="messages-block">You have already added a review</p>
+        </div>
+                
+        <form name="ReviewForm">
+            <div ng-if="showAllInputs">
+	            <div class="review-form-ratings">
+	                <ratings readonly="false" on-score-select="rateReview(score)"></ratings>
+	            </div>
+	            <div class="form-group" ng-if="showAuthorName" show-errors>
+	                <label for="authorName"> Author name* </label>
+	                <input type="text" class="form-control" id="authorName" name="authorName" ng-model="review.authorName"
+	                       required/>
+	
+	                <p class="error-msg" ng-if="ReviewForm.authorName.$error.required">The author's name is required</p>
+	            </div>
+	            <div class="form-group" ng-if="showAuthorEmail" show-errors>
+	                <label for="authorEmail"> Author email* </label>
+	                <input type="email" class="form-control" id="authorEmail" name="authorEmail"
+	                       ng-model="review.authorEmail" required/>
+	
+	                <p class="error-msg" ng-if="ReviewForm.authorEmail.$error.required">The authors's email is required</p>
+	
+	                <p class="error-msg" ng-if="ReviewForm.authorEmail.$error.email">The email address is invalid</p>
+	            </div>
+	            <div class="form-group">
+	                <label for="reviewText"> Review text </label>
+	                <textarea class="form-control" type="textarea" id="reviewText" name="reviewText"
+	                          maxlength="140" rows="6"
+	                          ng-model="review.reviewText" ></textarea>
+	            </div>
+	
+	            <button type="button" ng-click="submit()" id="submit" name="submit" class="btn btn-primary pull-right">
+	                Send review
+	            </button>
+            </div>
+                      
+            <div class="login-button-holder">
+				<button type="button" ng-if="showLogInToSendReviewButton" class="btn btn-primary" onclick="javascript:document.getElementById('login-btn').click();">
+					Sign in to write a review...
+				</button>
+			</div>
+        </form>
+    </div>
+</div>
