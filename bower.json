@@ -1,5 +1,5 @@
 {
-	"name": "rate-n-review",
+	"name": "epam-rate-n-review",
 	"version": "1.0.0",
 	"authors": [
 		"EPAM"
@@ -12,7 +12,8 @@
 		"yaas",
 		"rate",
 		"review",
-		"rate-n-review"
+		"rate-n-review",
+		"epam-rate-n-review"
 	],
 	"license": "MIT",
 	"ignore": [
