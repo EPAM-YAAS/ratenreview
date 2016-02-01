@@ -1,4 +1,4 @@
-# EPAM's rate and review
+# EPAM's Rate and Review
 
 The repo exposes ui directives for "Rate and Review" service,
 distributed through [YAAS Market](https://market.yaas.io/commercial/).
