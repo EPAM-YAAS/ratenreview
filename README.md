@@ -21,7 +21,7 @@ Then add a css and js to your `index.html`:
 ## Example
 
 Example usage of directives based on [Yaas storefront](https://github.com/SAP/yaas-storefront) is shown here:<br/>
-https://github.com/Yevhenii-Melnyk/example-epam-rate-n-review
+https://github.com/EPAM-YAAS/ratenreview-showcase
 
 ## License
 
