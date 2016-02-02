@@ -15,7 +15,7 @@ Then add a css and js to your `index.html`:
 <link href="js/vendor/epam-rate-n-review/dist/review.min.css" rel="stylesheet">
 ```
 ```html
-<script src="/bower_components/angular/angular.js"></script>
+<script src="js/vendor/epam-rate-n-review/dist/review.min.js"></script>
 ```
 
 ## Example
