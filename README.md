@@ -27,7 +27,7 @@ https://github.com/EPAM-YAAS/ratenreview-showcase
 
 The MIT License
 
-Copyright (c) 2016 Epam Systems, https://www.epam.com/
+Copyright (c) 2016 Epam Systems Inc., https://www.epam.com/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
