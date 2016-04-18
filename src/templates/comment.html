@@ -1,0 +1,10 @@
+<div class="comment-container col-md-12">
+    <div class="col-md-10 user-name">
+        <span ng-bind-html="comment.authorName" class="review-user-name"></span>
+        <span class="commented-text">commented on</span>
+        <span ng-bind-html="comment.createdAt  | date:'dd MMMM yyyy'" class="review-date"></span>
+    </div>
+    <div class="col-md-12 comment-content">
+        <span ng-bind-html="comment.text"></span>
+    </div>
+</div>

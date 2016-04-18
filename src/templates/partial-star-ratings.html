@@ -1,0 +1,13 @@
+<div class='average-rating-container'>
+    <ul class='star-rating background' class='readonly'>
+        <li ng-repeat='star in stars' class='star'>
+            <i class='glyphicon glyphicon-star'></i>
+        </li>
+    </ul>
+
+    <ul class='star-rating foreground' class='' style='width:{{filledInStarsContainerWidth}}%'>
+        <li ng-repeat='star in stars' class='star star-filled'>
+            <i class='glyphicon glyphicon-star'></i>
+        </li>
+    </ul>
+</div>

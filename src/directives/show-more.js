@@ -5,7 +5,7 @@
   .directive('showMore', function () {
     return {
       restrict: 'E',
-      templateUrl: 'src/templates/show-more.html',
+      templateUrl: 'js/app/review/templates/show-more.html',
       scope: {
         onShowMore: '&'
       },

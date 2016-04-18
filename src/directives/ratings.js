@@ -5,7 +5,7 @@
   .directive('ratings', function () {
     return {
       restrict: 'E',
-      templateUrl: 'src/templates/ratings.html',
+      templateUrl: 'js/app/review/templates/ratings.html',
       replace:true,
       scope: {
         reviewScore: '@?',

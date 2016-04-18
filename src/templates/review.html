@@ -1,17 +1,76 @@
-<div class="row review">
-  <div class="col-md-12">
-    <div class="row">
-      <div class="col-md-8">
-
-        <span ng-bind-html="review.authorName" class="review-user-name"></span>
-        <span ng-bind-html="review.createdAt  | date:'dd MMMM yyyy'" class="review-date"></span>
-      </div>
-      <div class="col-md-4">
-        <ratings review-score="{{review.rating}}" class="pull-right-md" ng-if="review.rating > 0"></ratings>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-12 review-content">
-    <span ng-bind-html="review.reviewText"></span>
-  </div>
+<div id="{{review.id}}" class="row review">
+	<div class="col-md-12">
+		<div class="row">
+			<form name="ReviewForm">
+				<div>
+					<div class="col-md-7 user-name">
+						<span ng-bind-html="review.authorName" class="review-user-name"></span>
+						<span ng-bind-html="review.createdAt  | date:'dd MMMM yyyy'"
+							class="review-date"></span>
+					</div>
+					<div class="vote-and-star-holder">
+						<div class="col-md-2 rating-buttons-container pull-right" ng-if="authenticated">
+							  <span>
+								  <i id="like" class="fa fa-thumbs-o-up" ng-click="performVote($event)"></i>
+								  <span class="review-rank">{{review.rank}}</span>
+								  <i id="dislike" class="fa fa-thumbs-o-down" ng-click="performVote($event)"></i>
+							  </span>
+						</div>
+						<div class="col-md-2 star-container pull-right" ng-if="review.rating > 0">
+							<div ng-if="!isReviewEditing">
+								<ratings review-score="{{review.rating}}" class="pull-right-md"></ratings>
+							</div>
+							<div ng-if="isReviewEditing">
+								<ratings readonly="false" review-score="{{editedReview.rating}}" on-score-select="rateReview(score)"
+									class="pull-right-md"></ratings>
+							</div>
+						</div>
+					</div>
+					<div ng-if="edited" class="col-md-12 edit-info">
+						<span>Your review has been submitted. Until then users will see your previous review.</span>
+					</div>
+					<div ng-if="commented" class="col-md-12 edit-info">
+						<span>Your comment has been submitted and will be published after approval</span>
+					</div>
+					<div ng-if="!isReviewEditing" class="col-md-12 review-content">
+						<span ng-bind-html="review.reviewText"></span>
+						<a ng-if="isEditable && !edited && authenticated" href="" ng-click="startEditing()" class="pull-right edit-link">Edit...</a>
+						<a href="" class="add-comment-link" ng-if="addCommentLinkVisible && authenticated && !commented" ng-click="toggleCommentInputVisibility()">Add comment</a>
+					</div>
+					<div ng-if="isReviewEditing">
+						<div class="form-group">
+							<textarea class="form-control" type="textarea" id="editableText"
+								name="reviewText" rows="6"
+								ng-model="editedReview.reviewText"></textarea>
+						</div>
+						<div class="form-group">
+							<button type="button" ng-click="stopEdit()" id="cancelEdit"
+								class="btn btn-primary pull-right">Cancel</button>
+						</div>
+						<div class="form-group">
+							<button type="button" ng-click="edit()" id="edit" name="edit" class="btn btn-primary pull-right">Submit</button>
+						</div>
+					</div>
+					
+                    <div ng-if="showCommentInput">
+						<div class="form-group">
+							<textarea class="form-control" type="textarea" id="editableText"
+								name="reviewText" rows="6"
+								ng-model="comment.text"></textarea>
+						</div>
+						<div class="form-group">
+							<button type="button" ng-click="stopCommenting()" id="cancelEdit"
+								class="btn btn-primary pull-right">Cancel</button>
+						</div>
+						<div class="form-group">
+							<button type="button" ng-click="comment()" id="edit" name="edit"
+								class="btn btn-primary pull-right">Submit</button>
+							
+						</div>
+					</div>
+                    <comment ng-repeat="comment in comments" comment="comment"></comment>					
+				</div>
+			</form>
+		</div>
+	</div>
 </div>

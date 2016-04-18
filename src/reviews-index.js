@@ -1,3 +1,3 @@
-angular.module('epam.review',[
-    'ngAnimate'
+angular.module('epam.review', [
+    'ui-notification'
 ]);

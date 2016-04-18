@@ -4,10 +4,18 @@
     </div>
     <div class="review-form-body">
         <div class="description" ng-if="showThanksForReview">
-            <p class="messages-block">Thanks! Your comment was added and will be published after review</p>
+            <p class="messages-block">Thanks! Your review has been submitted and will be published after approval</p>
         </div>
         <div class="description" ng-if="showAlreadyAddedReview">
            <p class="messages-block">You have already added a review</p>
+        </div>
+        <div class="description" ng-if="showPleaseCheckBadWords">
+           <p class="messages-block">You can't post a review that contains following stop words: 
+               <span ng-repeat="stopWord in stopWords track by $index">{{stopWord}}<span ng-if="$index !== (stopWords.length - 1)">, </span></span>
+           </p>
+        </div>
+        <div class="description">
+        	<p class="messages-block"></p>
         </div>
                 
         <form name="ReviewForm">
@@ -34,8 +42,7 @@
 	            <div class="form-group">
 	                <label for="reviewText"> Review text </label>
 	                <textarea class="form-control" type="textarea" id="reviewText" name="reviewText"
-	                          maxlength="140" rows="6"
-	                          ng-model="review.reviewText" ></textarea>
+	                          rows="6" ng-model="review.reviewText"></textarea>
 	            </div>
 	
 	            <button type="button" ng-click="submit()" id="submit" name="submit" class="btn btn-primary pull-right">

@@ -8,8 +8,11 @@
                     Review: Restangular.withConfig(function (RestangularConfigurer) {
                         RestangularConfigurer.setBaseUrl(reviewConfig.baseUrl);
                     }),
-                    postReview: function (review, success) {
-                        this.Review.all('reviews').post(review).then(success);
+                    postReview: function (review, success, error) {
+                        this.Review.all('reviews').post(review).then(success, error);
+                    },
+                    putReview: function (review, success) {
+                        this.Review.all('reviews/'+review.id).customPUT(review).then(success);
                     },
                     getReviewsByParams: function (params, success) {
                         this.Review.all('reviews').getList(params).then(function (response) {
